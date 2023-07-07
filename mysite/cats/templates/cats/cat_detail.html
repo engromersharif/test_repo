@@ -1,0 +1,20 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object_list.nickname }}</title>
+</head>
+<body>
+    <h1> Cat Detail</h1>
+    <p>Nickname: {{ object_list.weight }}</p>
+   <p>Foods: {{object_list.foods}} </p>
+    <p>Author: {{ object_list.breed}}</p>
+
+    <a href="{% url 'cats:all' %}">Back to Cat List</a>
+</body>
+</html>
+{% endblock %}

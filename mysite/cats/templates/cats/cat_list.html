@@ -1,0 +1,25 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat List</title>
+</head>
+<body>
+    <h1>Cat List</h1>
+    <ul>
+        {% if object_list %}
+        {% for cat in object_list %}
+    <li> <a href="{% url 'cats:cat_detail' cat.pk %}">{{cat.nickname }}</a>  <a href="{% url 'cats:cat_update' cat.pk %}">(Update</a> |
+     <a href="{% url 'cats:cat_delete' cat.pk %}"> Delete)</a></li>
+        {% endfor %}
+        {% else %}
+        <p> No Cats </p>
+        {% endif %}
+    </ul>
+     <a href = "{% url 'cats:cat_create' %}"> Create Cats </a> | <a href = "{% url 'cats:breedlist' %}"> Show Breeds </a>
+</body>
+</html>
+{% endblock %}
