@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.g
 
-# Test
+# Test123
 from .models import Question, Choice
 
 admin.site.register(Question)
